@@ -1,23 +1,12 @@
 import React from "react";
-import { Link } from "gatsby";
+import Header from "./header";
 import "./layout.scss";
 import { Container } from "@mui/material";
 
-const Layout = ({ pageTitle, children, sectionName }) => {
+const Layout = ({ pageTitle, children }) => {
   return (
     <div>
-      <nav>
-        <Container maxWidth="sm">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </Container>
-      </nav>
+      <Header />
       <main>
         <Container maxWidth="sm">
           <h1>{pageTitle}</h1>
