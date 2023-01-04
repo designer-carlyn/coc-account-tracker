@@ -8,10 +8,7 @@ const Layout = ({ pageTitle, children }) => {
     <div>
       <Header />
       <main>
-        <Container maxWidth="sm">
-          <h1>{pageTitle}</h1>
-          {children}
-        </Container>
+        <Container maxWidth="sm">{children}</Container>
       </main>
     </div>
   );

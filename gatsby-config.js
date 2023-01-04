@@ -1,6 +1,9 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
+const { createProxyMiddleware } = require("http-proxy-middleware");
+
 module.exports = {
   siteMetadata: {
     title: `COC Account Tracker`,
@@ -22,4 +25,13 @@ module.exports = {
       },
     },
   ],
+  developMiddleware: (app) => {
+    app.use(
+      "/v1",
+      createProxyMiddleware({
+        target: "https://api.clashofclans.com",
+        secure: false,
+      })
+    );
+  },
 };
