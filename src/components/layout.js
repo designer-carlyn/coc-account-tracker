@@ -1,14 +1,16 @@
 import React from "react";
 import Header from "./header";
-import "./layout.scss";
-import { Container } from "@mui/material";
 
-const Layout = ({ pageTitle, children }) => {
+import Container from "@mui/material/Container";
+
+import "./layout.scss";
+
+const Layout = ({ children }) => {
   return (
     <div>
       <Header />
       <main>
-        <Container maxWidth="sm">{children}</Container>
+        <Container fixed>{children}</Container>
       </main>
     </div>
   );

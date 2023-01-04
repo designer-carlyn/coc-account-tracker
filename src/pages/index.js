@@ -1,15 +1,19 @@
 // Step 1: Import React
 import React, { useState } from "react";
+import Axios from "axios";
+
+/* Import Components */
 import Layout from "../components/layout";
+import Login from "./login";
 
 /* Import MUI Plugins */
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-import Axios from "axios";
-
 // Step 2: Define your component
 const Index = () => {
+  const isLogin = false;
+
   const [playerTag, setPlayerTag] = useState(null);
   const [heading, setHeading] = useState("");
 
@@ -35,6 +39,10 @@ const Index = () => {
       })
       .catch((error) => console.error(error));
   };
+
+  if (!isLogin) {
+    return <Login />;
+  }
 
   return (
     <Layout>
