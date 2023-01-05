@@ -3,12 +3,12 @@ import Header from "./header";
 
 import Container from "@mui/material/Container";
 
-import "./layout.scss";
+import "../scss/components/layout.scss";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, accountPlayerTag }) => {
   return (
     <div>
-      <Header />
+      <Header accountPlayerTag={accountPlayerTag} />
       <main>
         <Container fixed>{children}</Container>
       </main>

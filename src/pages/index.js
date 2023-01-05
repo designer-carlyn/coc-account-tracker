@@ -29,7 +29,7 @@ const Index = () => {
   }
 
   const fetchPlayer = () => {
-    return Axios.get(process.env.GATSBY_URL_PLAYERS + playerTag, {
+    return Axios.get(process.env.GATSBY_API_ENDPOINT_PLAYER + playerTag, {
       headers: {
         Authorization: "Bearer " + process.env.GATSBY_API_KEY,
       },
@@ -45,7 +45,7 @@ const Index = () => {
   }
 
   return (
-    <Layout>
+    <Layout accountPlayerTag={heading}>
       <h1>{heading}</h1>
       <TextField
         size="small"

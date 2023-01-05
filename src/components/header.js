@@ -6,7 +6,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
-const Header = () => {
+const Header = ({ accountPlayerTag }) => {
   return (
     <header className="header">
       <Container fixed>
@@ -46,7 +46,7 @@ const Header = () => {
               xs={3}
             >
               <div className="header__account">
-                <h3>My Account</h3>
+                <h3>{accountPlayerTag}</h3>
               </div>
             </Grid>
           </Grid>
