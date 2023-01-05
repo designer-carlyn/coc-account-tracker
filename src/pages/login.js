@@ -12,7 +12,7 @@ import FormControl from "@mui/material/FormControl";
 
 import "../scss/pages/login.scss";
 
-const Login = () => {
+const Login = ({ handleSubmit, inputPlayerTag, loading }) => {
   return (
     <div className="login">
       <Container fixed>
@@ -24,23 +24,30 @@ const Login = () => {
               title="clas of clans"
             />
             <CardContent>
-              <FormControl>
-                <TextField
-                  color="secondary"
-                  size="small"
-                  label="PlayerTag"
-                  type="text"
-                  focused
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <NumbersIcon color="secondary" fontSize="small" />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-                <Button variant="contained">Submit</Button>
-              </FormControl>
+              {loading === true ? (
+                <h2>LOADING...</h2>
+              ) : (
+                <FormControl>
+                  <TextField
+                    color="secondary"
+                    size="small"
+                    label="PlayerTag"
+                    type="text"
+                    focused
+                    onChange={inputPlayerTag}
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <NumbersIcon color="secondary" fontSize="small" />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                  <Button variant="contained" onClick={handleSubmit}>
+                    Submit
+                  </Button>
+                </FormControl>
+              )}
             </CardContent>
           </Card>
         </div>
