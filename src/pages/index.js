@@ -5,7 +5,11 @@ import "@fontsource/roboto";
 
 /* Import Components */
 import Layout from "../components/layout";
+import HeroFrame from "../components/hero-frame";
 import Login from "./login";
+
+/* Import MUI Plugins */
+import Grid from "@mui/material/Grid";
 
 // Step 2: Define your component
 const Index = () => {
@@ -70,8 +74,18 @@ const Index = () => {
   }
 
   return (
-    <Layout accountPlayerTag={playerTagToken}>
-      <h1>{playerInfo.name}</h1>
+    <Layout accountPlayerTag={playerInfo.name}>
+      {/* <h1>{playerInfo.name}</h1> */}
+
+      <Grid container spacing={3}>
+        {playerInfo.heroes.map(function (hero) {
+          return (
+            <Grid key={hero.name} item lg={4} md={6} xs={12}>
+              <HeroFrame heroName={hero.name} image={hero.name} />
+            </Grid>
+          );
+        })}
+      </Grid>
     </Layout>
   );
 };

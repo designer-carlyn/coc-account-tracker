@@ -24,6 +24,10 @@ module.exports = {
         cssPropOptimization: true,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: { name: `images`, path: `${__dirname}/src/images` },
+    },
   ],
   developMiddleware: (app) => {
     app.use(

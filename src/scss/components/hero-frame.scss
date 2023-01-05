@@ -1,0 +1,58 @@
+.hero-frame {
+  border: 2px solid #333333;
+  border-radius: 10px;
+  background: #5E687C;
+  padding: 0 15px 15px 15px;
+
+  .hero-frame__header {
+    font-family: "Bebas Neue", cursive;
+    color: #ffffff;
+    text-align: center;
+    font-size: 25px;
+    padding: 10px 0;
+    text-shadow: 4px 3px 1px rgba(0,0,0,1);
+    letter-spacing: 1px;
+  }
+
+  .hero-frame__info {
+    background: linear-gradient(to bottom,  #DEEBF1, #ffffff);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-gap: 10px;
+    padding: 15px;
+
+    .avatar {
+      border: 3px solid #333333;
+      border-radius: 10px;
+      padding: 5px;
+
+      img {
+        object-fit: contain !important;
+        object-position: center;
+      }
+    }
+
+    .info-header {
+      background: #8d8fff;
+      border-radius: 5px;
+      color: #ffffff;
+      padding: 10px;
+      font-size: 20px;
+      font-family: "Prosto One", cursive;
+      line-height: 1;
+      box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
+
+      .title {
+        font-size: 18px;
+      }
+      
+      .type {
+        font-weight: 600;
+        text-shadow: 0px 1px 2px #000000;
+        font-size: 23px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
