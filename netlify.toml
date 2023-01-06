@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/v1"
+  to = "https://api.clashofclans.com"
+  status = 200
