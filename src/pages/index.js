@@ -32,10 +32,7 @@ const Index = () => {
 
   const fetchPlayer = () => {
     return Axios.get(
-      (document.URL === "http://localhost:8000/"
-        ? "http://localhost:8000"
-        : "https://api.clashofclans.com") +
-        process.env.GATSBY_API_ENDPOINT_PLAYER +
+      process.env.GATSBY_API_ENDPOINT_PLAYER +
         (playerTag == null
           ? localStorage.getItem("playerTagToken")
           : localStorage.getItem("playerTagToken")),
