@@ -33,12 +33,6 @@ module.exports = {
       options: { name: `images`, path: `${__dirname}/src/images` },
     },
   ],
-  proxy: [
-    {
-      prefix: "/v1",
-      url: "https://api.clashofclans.com",
-    },
-  ],
   developMiddleware: (app) => {
     app.use(
       "/v1",
