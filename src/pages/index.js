@@ -81,7 +81,10 @@ const Index = () => {
         {playerInfo.heroes.map(function (hero) {
           return (
             <Grid key={hero.name} item lg={4} md={6} xs={12}>
-              <HeroFrame heroName={hero.name} image={hero.name} />
+              <HeroFrame
+                heroName={hero.name}
+                heroImage="https://api-assets.clashofclans.com/badges/70/AgGEDdWx4ZR1Cla0sBgMfRob0MwZZhv4XMBxCDnMpa4.png"
+              />
             </Grid>
           );
         })}
