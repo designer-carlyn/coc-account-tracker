@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/v1"
+  from = "https://lovely-phoenix-b204f2.netlify.app/"
   to = "https://api.clashofclans.com"
   status = 200
