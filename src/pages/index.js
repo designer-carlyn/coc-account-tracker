@@ -18,8 +18,6 @@ const Index = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const playerTagToken = localStorage.getItem("playerTagToken");
-
   function inputPlayerTag(event) {
     const value = event.target.value;
     setPlayerTag(value);
@@ -35,7 +33,9 @@ const Index = () => {
   const fetchPlayer = () => {
     return Axios.get(
       process.env.GATSBY_API_ENDPOINT_PLAYER +
-        (playerTag == null ? playerTagToken : playerTagToken),
+        (playerTag == null
+          ? localStorage.getItem("playerTagToken")
+          : localStorage.getItem("playerTagToken")),
       {
         headers: {
           Authorization: "Bearer " + process.env.GATSBY_API_KEY,
@@ -75,12 +75,10 @@ const Index = () => {
 
   return (
     <Layout accountPlayerTag={playerInfo.name}>
-      {/* <h1>{playerInfo.name}</h1> */}
-
       <Grid container spacing={3}>
-        {playerInfo.heroes.map(function (hero) {
+        {playerInfo.heroes.map((hero, key) => {
           return (
-            <Grid key={hero.name} item lg={4} md={6} xs={12}>
+            <Grid key={key} item lg={4} md={6} xs={12}>
               <HeroFrame
                 heroName={hero.name}
                 heroImage="https://api-assets.clashofclans.com/badges/70/AgGEDdWx4ZR1Cla0sBgMfRob0MwZZhv4XMBxCDnMpa4.png"

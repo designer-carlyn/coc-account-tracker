@@ -5,6 +5,9 @@
 const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     title: `COC Account Tracker`,
     siteUrl: `https://www.yourdomain.tld`,
