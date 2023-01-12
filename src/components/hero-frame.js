@@ -1,10 +1,9 @@
 import React from "react";
-
 import "../scss/components/hero-frame.scss";
 
 import "@fontsource/bebas-neue";
 
-const HeroFrame = ({ heroName, heroImage }) => {
+const HeroFrame = ({ heroName, heroImage, heroVillage }) => {
   return (
     <div className="hero-frame">
       <div className="hero-frame__header">{heroName}</div>
@@ -15,7 +14,7 @@ const HeroFrame = ({ heroName, heroImage }) => {
         <div className="info">
           <div className="info-header">
             <div className="title">Village:</div>
-            <div className="type">Home</div>
+            <div className="type">{heroVillage}</div>
           </div>
         </div>
       </div>

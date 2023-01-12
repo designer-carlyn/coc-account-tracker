@@ -81,7 +81,12 @@ const Index = () => {
             <Grid key={key} item lg={4} md={6} xs={12}>
               <HeroFrame
                 heroName={hero.name}
-                heroImage="https://api-assets.clashofclans.com/badges/70/AgGEDdWx4ZR1Cla0sBgMfRob0MwZZhv4XMBxCDnMpa4.png"
+                heroImage={
+                  "https://ik.imagekit.io/designers/coc-tracker/heroes/" +
+                  hero.name.split(" ").join("_") +
+                  ".webp"
+                }
+                heroVillage={hero.village.toUpperCase()}
               />
             </Grid>
           );
